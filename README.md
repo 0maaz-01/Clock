@@ -1,9 +1,15 @@
-# Clock-F
+# Clock
 
 ## Graphic User Interface
 
 ### The front page consists of a digital clock that displays the local time and an analog clock.
 ![image at](https://github.com/0maaz-01/Clock/blob/main/Images/Front_Page.png)
+
+### World Clock that allows user to search for the city and add it to the screen.
+![image at](https://github.com/0maaz-01/Clock/blob/main/Images/A.png)
+
+### and it also suggests the name of the cities available while typing.
+![image at](https://github.com/0maaz-01/Clock/blob/main/Images/B.png)
 
 ### The stopwatch consists of a digital clock displaying time in the format HH:MM:SS, which represents the duration elapsed since the stopwatch started.
 ![image at](https://github.com/0maaz-01/Clock/blob/main/Images/StopWatch.png)
