@@ -13,12 +13,13 @@ class First_page:
         self.screen_height = self.window.winfo_screenheight()
         self.window.geometry(f"700x400+{(self.screen_width//3)}+{self.screen_height//4}")
 
+
         self.window.columnconfigure(0, weight = 1)
         self.window.columnconfigure(1, weight = 1)
         self.window.rowconfigure(0, weight = 1)
 
 
-        self.time_frame = CTkFrame(self.window)
+        self.time_frame = CTkFrame(self.window) # , fg_color=  "black")
         self.time_frame.grid(row = 0, column = 0, sticky = "nsew")
         self.time_frame.columnconfigure(0, weight = 1)
         self.time_frame.rowconfigure(3, weight = 1)
@@ -34,13 +35,13 @@ class First_page:
         self.update()
         self.window.bind("<Configure>", self.adjust_layout)
 
-        self.button_frame = CTkFrame(master = self.window, border_width=5, corner_radius=0, fg_color = "#242124" ) 
+        self.button_frame = CTkFrame(master = self.window, border_width=5, corner_radius=0, fg_color = "#242124" )
         self.button_frame.grid(row = 0, column = 1, sticky="nsew")
 
         self.button_frame.columnconfigure(0, weight = 1)
 
-        self.clock = CTkButton(master = self.button_frame, text = "Clock",font=("Arial", 24), fg_color = "#cd5700", 
-                               height = self.button_frame.winfo_height()//2,width = self.button_frame.winfo_width(), 
+        self.clock = CTkButton(master = self.button_frame, text = "Clock",font=("Arial", 24), fg_color = "#cd5700",
+                               height = self.button_frame.winfo_height()//2,width = self.button_frame.winfo_width(),
                                corner_radius=0, anchor = "w", border_width=0, hover_color = "#cd5700", command = self.open_clock)
         self.clock.grid(row = 0, column = 0, sticky="nsew", padx = 20, pady = 10)
 
@@ -49,9 +50,9 @@ class First_page:
                                hover_color = "#cd5700", corner_radius=0, anchor = "w", border_width = 0, command = self.open_stopwatch)
         self.stopwatch.grid(row = 2, column = 0, sticky="nsew", padx = 20, pady = 10)
 
-        self.timer = CTkButton(master = self.button_frame, text = "Timer",font=("Arial", 24), fg_color = "#242124", anchor = "w", command = self.open_timer,
+        self.timer = CTkButton(master = self.button_frame, text = "Timer",font=("Arial", 24), fg_color = "#242124", anchor = "w",
                                text_color = "white", height = self.button_frame.winfo_height()//2,width = self.button_frame.winfo_width(),
-                               hover_color = "#cd5700", corner_radius=0, border_width=0)
+                               hover_color = "#cd5700", corner_radius=0, border_width=0, command = self.open_timer)
         self.timer.grid(row = 1, column = 0, sticky="nsew", padx = 20, pady = 10)
 
         self.world_clock = CTkButton(master = self.button_frame, text = "World Clock",font=("Arial", 24), anchor = "w",
@@ -67,6 +68,7 @@ class First_page:
 
         self.update_clock()
 
+
     def update(self):
         time_string =  strftime("%I: %M: %S %p")
         self.time_label.configure(text = time_string)
@@ -78,6 +80,7 @@ class First_page:
 
 
     def adjust_layout(self, event = None):
+
         current_width = self.window.winfo_width()
         current_height = self.window.winfo_height()
         font_size = max(12, (current_width + current_height) // 30)
@@ -90,37 +93,37 @@ class First_page:
         self.world_clock.configure(font=("Arial", font_size // 2))
 
 
+    def draw_clock_face(self, center_x, center_y, radius):
+        self.canvas.create_oval(
+            center_x - radius, center_y - radius,
+            center_x + radius, center_y + radius,
+            outline="orange", width = 10, fill="#f5f5f5"
+            )
 
-    def draw_circle(self, center_x, center_y, radius):
-        """Draw the clock face."""
-        self.canvas.create_oval(center_x - radius, center_y - radius, center_x + radius, center_y + radius, outline="#cd5700", width=10)
+        for i in range(1, 13):
+            angle = math.radians((i * 30) - 90)
+            x = center_x + math.cos(angle) * (radius - 30)
+            y = center_y + math.sin(angle) * (radius - 30)
+            self.canvas.create_text(x, y, text=str(i), font=("Arial", (self.canvas.winfo_width() + self.canvas.winfo_height()) // 45, "bold"))
 
-        for i in range(12):
-            angle = math.radians(i * 30) 
-            x1 = center_x + radius * 0.9 * math.cos(angle)
-            y1 = center_y - radius * 0.9 * math.sin(angle)
-            x2 = center_x + radius * 0.8 * math.cos(angle)
-            y2 = center_y - radius * 0.8 * math.sin(angle)
-            self.canvas.create_line(x1, y1, x2, y2, fill="white", width=8)
 
 
     def draw_hand(self, center_x, center_y, length, width, angle, color):
         """Draw a clock hand."""
         angle = math.radians(angle)
         x = center_x + length * math.cos(angle)
-        y = center_y - length * math.sin(angle) 
+        y = center_y - length * math.sin(angle)
         self.canvas.create_line(center_x, center_y, x, y, fill=color, width=width+2)
 
 
     def update_clock(self, event=None):
-
+        """Update the clock hands based on the current time."""
         width = self.canvas.winfo_width()
         height = self.canvas.winfo_height()
         center_x, center_y = width / 2, height / 2
-        radius = min(width, height) / 2.5  
+        radius = min(width, height) / 2.5
 
-        self.canvas.delete("all") 
-        self.draw_circle(center_x, center_y, radius)
+        self.canvas.delete("all")
 
         current_time = time.localtime()
         hours = current_time.tm_hour % 12
@@ -135,9 +138,11 @@ class First_page:
         minute_angle = -minute_angle
         second_angle = -second_angle
 
-        self.draw_hand(center_x, center_y, radius * 0.5,6, hour_angle, "white")  
-        self.draw_hand(center_x, center_y, radius * 0.7, 4, minute_angle,"#FFDB58")  
-        self.draw_hand(center_x, center_y, radius * 0.8, 2, second_angle, "red")  
+
+        self.draw_clock_face(center_x, center_y, radius)
+        self.draw_hand(center_x, center_y, radius * 0.5,7, hour_angle, "black")
+        self.draw_hand(center_x, center_y, radius * 0.7, 5, minute_angle,"black")
+        self.draw_hand(center_x, center_y, radius * 0.8, 3, second_angle, "black")  
 
         self.window.after(1000, self.update_clock)
 
