@@ -4,6 +4,7 @@
 #### This application is a multifunctional clock that provides several features such as a timer, stopwatch, world clock, and a digital clock with city-specific time zones. The app is built using **Tkinter** and **CustomTkinter** for its graphical interface and functionality. It allows users to track time in multiple ways and provides a sleek, modern look.
 
 
+
 ## Graphic User Interface
 
 #### The front page consists of a digital clock that displays the local time and an analog clock.
@@ -25,12 +26,25 @@
 
 
 ## Features
-- **Timer**: Set a custom countdown timer.
-- **Stopwatch**: Start, stop, and reset the stopwatch.
-- **World Clock**: Add cities and view their current time across various time zones.
-- **Digital Clock**: Shows the current time in a digital format for any selected city.
+- **Digital Clock**: Displays the current time in real-time with a modern design.
+- **Analog Clock**: Visualizes the time using a traditional clock face with moving hands.
+- **Stopwatch**: Includes a stopwatch feature for time tracking.
+- **Timer**: Allows you to set countdown timers.
+- **World Clock**: Display the time for different cities around the world.
+- **Responsive Layout**: Automatically adjusts the layout and font size based on the window size.
+- **City-specific Time**: Displays the time for a city based on its geographical coordinates (latitude and longitude).
+- **Time Zone Detection**: Automatically detects the time zone for the given latitude and longitude using the `timezonefinder` library.
+  
 
-### Requirements
+
+## Technologies Used
+- **Python**: Programming language used for the app.
+- **CustomTkinter**: A modern interface library based on Tkinter to create the user interface.
+- **pytz**: A Python library for time zone support.
+- **timezonefinder**: A library that allows you to find the timezone for a given latitude and longitude.
+- **datetime**: A Python module for handling date and time.
+
+## Requirements
 - Python 3.x
 - `customtkinter` library
 - `tkinter` library (comes pre-installed with Python)
@@ -141,25 +155,8 @@ This will launch the GUI, and you can interact with the timer, stopwatch, and cl
 
 The application uses a class structure, with the `Timer` class managing the timer, stopwatch, and clock functionalities. Each component is responsible for specific interactions, such as starting and stopping the timer, and updating the display.
 
-- **Main Components**:
-  - **CTkLabel**: Used for displaying time and status messages.
-  - **CTkButton**: Buttons for interacting with the timer, stopwatch, clock, and world clock.
-  - **CTkEntry**: Entry fields for inputting the hours, minutes, and seconds for the timer.
-  - **CTkFrame**: Frames to organize the layout.
 
-- **Methods**:
-  - `start_timer`: Starts the countdown based on user input.
-  - `stop_timer`: Stops the countdown.
-  - `reset_timer`: Resets the timer to the initial state.
-  - `update_timer`: Updates the timer display every second.
-  - `format_time`: Formats the time in `hh:mm:ss` format.
 
-### File Structure
-
-- `timer_app.py`: The main application script with the timer, stopwatch, and clock functionalities.
-- `Stopwatch_Final.py`: Contains the Stopwatch functionality.
-- `World_Clock.py`: Contains the World Clock functionality.
-- `Front_Final.py`: Contains the main page layout and initialization code.
 
 ### Contributing
 
@@ -175,22 +172,8 @@ Let me know if you need further adjustments!
 
 
 
-Here's the README file for the code you've provided:
 
----
 
-# Digital Clock App
-
-## Overview
-This project is a **Digital Clock App** with multiple functionalities such as a stopwatch, timer, world clock, and analog clock display. The app is designed using Python with the `CustomTkinter` library to create a sleek and modern user interface, offering a customizable and interactive experience.
-
-## Features
-- **Digital Clock**: Displays the current time in real-time with a modern design.
-- **Analog Clock**: Visualizes the time using a traditional clock face with moving hands.
-- **Stopwatch**: Includes a stopwatch feature for time tracking.
-- **Timer**: Allows you to set countdown timers.
-- **World Clock**: Display the time for different cities around the world.
-- **Responsive Layout**: Automatically adjusts the layout and font size based on the window size.
 
 ## Technologies Used
 - **Python**: The programming language used for the app.
@@ -242,23 +225,10 @@ This README is now complete with the description, instructions, and code structu
 
 
 
-# Digital Clock App
 
-## Overview
-This project is a **Digital Clock App** that displays the current time for a specific city based on its geographical coordinates (latitude and longitude). The app allows you to easily see the time in different locations around the world with support for automatic time zone detection.
 
-## Features
-- **City-specific Time**: Displays the time for a city based on its geographical coordinates (latitude and longitude).
-- **Time Zone Detection**: Automatically detects the time zone for the given latitude and longitude using the `timezonefinder` library.
-- **Customizable Display**: The font size of the clock can be resized based on your preference.
-- **Live Updates**: The clock updates every second to show the real-time clock.
 
-## Technologies Used
-- **Python**: Programming language used for the app.
-- **CustomTkinter**: A modern interface library based on Tkinter to create the user interface.
-- **pytz**: A Python library for time zone support.
-- **timezonefinder**: A library that allows you to find the timezone for a given latitude and longitude.
-- **datetime**: A Python module for handling date and time.
+
 
 ## How It Works
 - The app takes the latitude and longitude of a city and finds its timezone using the `TimezoneFinder` library.
@@ -280,31 +250,6 @@ This project is a **Digital Clock App** that displays the current time for a spe
    ```
 
 3. Run the Python script to launch the app.
-
-## Usage
-
-- Initialize the `DigitalClock` class with the root window of your Tkinter app, the latitude and longitude of the desired city, the row in the grid where the clock should be placed, and the name of the city.
-  
-  Example:
-  ```python
-  root = CTk()  # Create the main Tkinter window
-  clock = DigitalClock(root, latitude=40.7128, longitude=-74.0060, row=0, city_name="New York")
-  root.mainloop()
-  ```
-
-- You can resize the clock by calling the `resize()` method with a new font size:
-  ```python
-  clock.resize(20)  # Resize the clock to a font size of 20
-  ```
-
-## Code Structure
-
-- `DigitalClock` Class: This is the main class that handles the clock functionality. It initializes the clock with the city’s timezone and updates the clock every second.
-  
-  ### Methods:
-  - **`__init__`**: Initializes the clock with the given parameters (root window, latitude, longitude, city name).
-  - **`resize`**: Resizes the font of the clock.
-  - **`update_clock`**: Updates the clock every second to reflect the current time in the specified city.
 
 
 
