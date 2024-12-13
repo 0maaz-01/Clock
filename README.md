@@ -47,6 +47,14 @@
 - **Math**: For calculating angles to draw the clock hands.
 
 
+### Resizing the App
+- The app automatically adjusts its font size and layout to maintain usability at different screen sizes. This ensures that no matter how large or small you resize the window, the buttons, clocks, and input fields will remain readable and easy to interact with.
+
+<img src="https://github.com/0maaz-01/Clock/blob/main/Images/Resizable1.png" width="600" height="400">
+<img src="https://github.com/0maaz-01/Clock/blob/main/Images/Resizable2.png" width="600" height="400">
+<img src="https://github.com/0maaz-01/Clock/blob/main/Images/Resizable3.png" width="600" height="400">
+
+
 ### Installation Requirements
 
 1. **Python** (Version 3.x recommended)
@@ -59,12 +67,45 @@
    pip install tk
    ```
 
-### Resizing the App
-- The app automatically adjusts its font size and layout to maintain usability at different screen sizes. This ensures that no matter how large or small you resize the window, the buttons, clocks, and input fields will remain readable and easy to interact with.
 
-![image at](https://github.com/0maaz-01/Clock/blob/main/Images/Resizable1.png)
-![image at](https://github.com/0maaz-01/Clock/blob/main/Images/Resizable2.png)
-![image at](https://github.com/0maaz-01/Clock/blob/main/Images/Resizable3.png)
+## Installation
+
+1. Clone this repository to your local machine:
+
+   ```bash
+   git clone <repository_url>
+   ```
+
+2. Install the necessary dependencies using `pip`:
+
+   ```bash
+   pip install customtkinter
+   ```
+
+3. Run the Python script to launch the app:
+
+   ```bash
+   python your_script_name.py
+   ```
+
+
+
+## Installation
+
+1. Clone this repository to your local machine:
+
+   ```
+   git clone <repository_url>
+   ```
+
+2. Install the necessary dependencies using `pip`:
+
+   ```
+   pip install customtkinter pytz timezonefinder
+   ```
+
+3. Run the Python script to launch the app.
+
 
 
 
@@ -99,8 +140,6 @@ This app supports resizing. The interface adjusts its layout, font sizes, and cl
 
 
 
-
-
 ### Running the Application
 
 To run the application, execute the following script:
@@ -114,70 +153,15 @@ This will launch the GUI, and you can interact with the timer, stopwatch, and cl
 
 
 
-## Installation
-
-1. Clone this repository to your local machine:
-
-   ```bash
-   git clone <repository_url>
-   ```
-
-2. Install the necessary dependencies using `pip`:
-
-   ```bash
-   pip install customtkinter
-   ```
-
-3. Run the Python script to launch the app:
-
-   ```bash
-   python your_script_name.py
-   ```
 
 
-## License
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
----
-
-Enjoy exploring this app! Feel free to modify and expand the functionality as needed.
-
----
-
-
-
-
-## Installation
-
-1. Clone this repository to your local machine:
-
-   ```
-   git clone <repository_url>
-   ```
-
-2. Install the necessary dependencies using `pip`:
-
-   ```
-   pip install customtkinter pytz timezonefinder
-   ```
-
-3. Run the Python script to launch the app.
-
-
-
-## License
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
----
-
-Feel free to modify and extend this project as you wish! Enjoy exploring time zones and building useful applications!
 
 ### Contributing
 
-Feel free to fork this repository, submit issues, and open pull requests. Any improvements or new feature suggestions are welcome!
+Feel free to modify and extend this project as you wish! Enjoy exploring time zones and building useful applications!
 
 ### License
 
-This project is open-source and available under the MIT License.
+This project is open-source and available under the MIT License - see the [LICENSE](LICENSE) file for details.
 
----
+
