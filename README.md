@@ -47,8 +47,8 @@
 - **Math**: For calculating angles to draw the clock hands.
 
 
-### Resizing the App
-- The app automatically adjusts its font size and layout to maintain usability at different screen sizes. This ensures that no matter how large or small you resize the window, the buttons, clocks, and input fields will remain readable and easy to interact with.
+### Resizable User Interface
+This app supports resizing. The interface adjusts its layout, font sizes, and clock displays based on the size of the window. This ensures a responsive design that looks great on any screen size.
 
 <img src="https://github.com/0maaz-01/Clock/blob/main/Images/Resizable1.png" width="600" height="400">
 <img src="https://github.com/0maaz-01/Clock/blob/main/Images/Resizable2.png" width="600" height="400">
@@ -58,101 +58,34 @@
 ### Installation Requirements
 
 1. **Python** (Version 3.x recommended)
-2. **customtkinter**: Install using pip:
+   
+2. Clone this repository to your local machine:
+
+3. Install the necessary dependencies using `pip`:
+
+a) **customtkinter**:
    ```bash
    pip install customtkinter
    ```
-3. **Tkinter**: Tkinter is typically included with Python, but if needed, install it using:
+b) **Tkinter**: Tkinter is typically included with Python, but if needed, install it using:
    ```bash
    pip install tk
    ```
-
-
-## Installation
-
-1. Clone this repository to your local machine:
-
-   ```bash
-   git clone <repository_url>
+c) **pytz**
    ```
-
-2. Install the necessary dependencies using `pip`:
-
-   ```bash
-   pip install customtkinter
+   pip install pytz 
    ```
-
-3. Run the Python script to launch the app:
-
-   ```bash
-   python your_script_name.py
+d) **timezonefinder**
    ```
-
-
-
-## Installation
-
-1. Clone this repository to your local machine:
-
+   pip install pytz timezonefinder
    ```
-   git clone <repository_url>
-   ```
+4. Run the Python script to launch the app.
 
-2. Install the necessary dependencies using `pip`:
-
-   ```
-   pip install customtkinter pytz timezonefinder
-   ```
-
-3. Run the Python script to launch the app.
-
-
-
-
-### Features in Detail
-
-#### 1. Timer:
-The timer allows users to input hours, minutes, and seconds, and then countdown until the time is up. It also includes **Start**, **Stop**, and **Reset** buttons. 
-- **Resizable UI**: The layout and font sizes adjust based on the size of the window, making the timer display easy to read at any screen size.
-
-#### 2. Stopwatch:
-Start, pause, and reset a stopwatch. The app's interface is simple and straightforward, with buttons to control the stopwatch's operation.
-
-#### 3. World Clock:
-View current times in multiple cities around the world. 
-- **Add cities**: Search for cities by name, and add them to your list of monitored cities.
-- **Resizable UI**: The world clock interface adjusts based on the window size, and each city's clock will resize to ensure readability.
-
-#### 4. Digital Clock:
-Displays the current time in a digital format for each added city. The app shows the local time in various global locations.
-
-### Resizable User Interface
-This app supports resizing. The interface adjusts its layout, font sizes, and clock displays based on the size of the window. This ensures a responsive design that looks great on any screen size.
-
----
 
 ### How to Use
 1. Run the application by executing `main.py` or the corresponding script for the clock functionality you want to use.
 2. Use the **Timer**, **Stopwatch**, **World Clock**, and **Digital Clock** features by clicking on the buttons in the interface.
 3. In **World Clock**, search for and add cities to monitor their time. The interface will automatically adjust to accommodate the new clocks.
-
----
-
-
-
-### Running the Application
-
-To run the application, execute the following script:
-
-```bash
-python timer_app.py
-```
-
-This will launch the GUI, and you can interact with the timer, stopwatch, and clock features. You can resize the window and the UI components will adjust automatically.
-
-
-
-
 
 
 
