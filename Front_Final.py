@@ -9,6 +9,7 @@ class First_page:
     def __init__(self, window):
         self.window = window
         self.window.title("Clock")
+        self.window.attributes("-topmost", True)
         self.screen_width = self.window.winfo_screenwidth()
         self.screen_height = self.window.winfo_screenheight()
         self.window.geometry(f"700x400+{(self.screen_width//3)}+{self.screen_height//4}")
