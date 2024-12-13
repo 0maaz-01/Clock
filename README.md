@@ -95,6 +95,6 @@ Feel free to modify and extend this project as you wish! Enjoy exploring time zo
 
 ### License
 
-This project is open-source and available under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is open-source and available under the MIT License - https://github.com/0maaz-01/Clock/edit/main/LICENSE
 
 
