@@ -9,6 +9,7 @@ class World_Clock:
         self.window.title("Clock")
         self.screen_width = self.window.winfo_screenwidth()
         self.screen_height = self.window.winfo_screenheight()
+        self.window.attributes("-topmost", True)
         self.window.geometry(f"700x400+{(self.screen_width // 3)}+{self.screen_height // 4}")
 
         self.window.columnconfigure(0, weight=1)
